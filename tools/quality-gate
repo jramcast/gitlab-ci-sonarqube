@@ -9,7 +9,7 @@ $TOOLS_PATH/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner \
     -Dsonar.gitlab.project_id=$CI_PROJECT_PATH \
     -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA \
     -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME \
-    -Dsonar.gitlab.failure_notification_mode=exit-code
+    -Dsonar.gitlab.failure_notification_mode=exit-code \
     $@  # Add any additional params
 
 
