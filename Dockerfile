@@ -8,4 +8,6 @@ RUN ln -s /opt/gitlab-ci-sonarqube/preview-issues /bin/preview-issues
 
 ENV TOOLS_PATH "/opt/gitlab-ci-sonarqube"
 
+WORKDIR /code
+
 CMD ["quality-gate"]
