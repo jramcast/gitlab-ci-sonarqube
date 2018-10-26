@@ -21,4 +21,4 @@ quality:
     - quality-gate # you can add other sonar options e.g: -Dsonar.projectVersion=${CI_COMMIT_SHA}
 ```
 
-If not installed yet, install [sonar-gitlab-plugin](https://github.com/gabrie-allaigre/sonar-gitlab-plugin) in your Sonarqube server, and follow the instructions to configure it](https://github.com/gabrie-allaigre/sonar-gitlab-plugin#configuration)
+If not installed yet, install [sonar-gitlab-plugin](https://github.com/gabrie-allaigre/sonar-gitlab-plugin) in your Sonarqube server, and follow the instructions to configure it](https://github.com/gabrie-allaigre/sonar-gitlab-plugin#configuration).
