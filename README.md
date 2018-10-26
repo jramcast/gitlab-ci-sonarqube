@@ -6,7 +6,15 @@ Tested with Sonarqube 7.3 and Gitlab 11.3.5.
 
 ## Configuration
 
-Add the following to your `gitlab-ci.yml`
+### In Sonarqube
+
+If not installed yet, install [sonar-gitlab-plugin](https://github.com/gabrie-allaigre/sonar-gitlab-plugin) in your Sonarqube server, and follow the instructions to configure it](https://github.com/gabrie-allaigre/sonar-gitlab-plugin#configuration).
+
+### In your project
+
+As with [sonnar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner), you will need to have a `sonar.properties` file in your project's root folder.
+
+To run the scan, add the following to your `gitlab-ci.yml`
 
 ```yml
 quality:
@@ -19,4 +27,4 @@ quality:
     - quality-gate # you can add other sonar options e.g: -Dsonar.projectVersion=${CI_COMMIT_SHA}
 ```
 
-If not installed yet, install [sonar-gitlab-plugin](https://github.com/gabrie-allaigre/sonar-gitlab-plugin) in your Sonarqube server, and follow the instructions to configure it](https://github.com/gabrie-allaigre/sonar-gitlab-plugin#configuration).
+If the scan does not pass your Sonarqube Quality Gate, the `quality-gate` command with exit with non-zero status, breaking your pipeline.
