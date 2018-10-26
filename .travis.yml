@@ -1,0 +1,8 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t jramcast/gitlab-ci-sonarqube .
+  - docker push jramcast/gitlab-ci-sonarqube
