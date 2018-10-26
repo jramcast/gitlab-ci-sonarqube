@@ -1,4 +1,4 @@
-# gitab-ci-sonarqube
+# gitlab-ci-sonarqube
 
 Docker image that combines [sonnar-scanner](https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner), [sonar-gitlab-plugin](https://github.com/gabrie-allaigre/sonar-gitlab-plugin) and [sonar-gate-breaker](https://github.com/gabrie-allaigre/sonar-gate-breaker) to integrate SonarQube quality gates with Gitlab CI and break pipelines when the Quality Gate does not pass.
 
