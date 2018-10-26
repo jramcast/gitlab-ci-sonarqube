@@ -3,15 +3,16 @@
 # Runs a code scan, sends the results to Sonarqube, and checks if the quality gate passed
 
 echo "Scanning"
-$TOOLS_PATH/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner \
+COMMAND="$TOOLS_PATH/sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner \
     -Dsonar.host.url=$SONAR_URL \
     -Dsonar.login=$SONAR_LOGIN \
     -Dsonar.gitlab.project_id=$CI_PROJECT_ID \
     -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA \
-    -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME
-    # Add any additional params
-    $@
+    -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME \
+    $@"
 
+echo $COMMAND
+$COMMAND
 
 echo "Checking quality gate"
 # Break build if quality gate did not succeed
