@@ -12,7 +12,7 @@ Add the following to your `gitlab-ci.yml`
 
 ```yml
 quality:
-  image: jramcast:gitlab-ci-sonarqube
+  image: jramcast/gitlab-ci-sonarqube
   stage: test
   env:
     SONAR_URL: '...',
