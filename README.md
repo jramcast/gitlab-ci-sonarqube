@@ -24,10 +24,10 @@ quality:
     SONAR_URL: '...',
     SONAR_LOGIN: 'sonarqube login token'
   script:
-    - preview-issues # you can add other sonar options e.g: -Dsonar.projectVersion=${CI_COMMIT_SHA}
-    - quality-gate # you can add other sonar options e.g: -Dsonar.projectVersion=${CI_COMMIT_SHA}
+    - sonar-scanner-preview # you can add other sonar options e.g: -Dsonar.projectVersion=${CI_COMMIT_SHA}
+    - sonar-scanner # you can add other sonar options e.g: -Dsonar.projectVersion=${CI_COMMIT_SHA}
 ```
 
-`preview-issues` launchs a scan in **preview** mode (no publication in Sonarqube is done), generating inline comments in gitlab for the current commit.
+`sonar-scanner-preview` launchs a scan in **preview** mode (no publication in Sonarqube is done), generating inline comments in gitlab for the current commit.
 
-`quality-gate` publishes a scan in Sonarqube. If the scan does not pass your Sonarqube Quality Gate, the `quality-gate` command with exit with non-zero status, breaking your pipeline.
+`sonar-scanner` publishes a scan in Sonarqube. If the scan does not pass your Sonarqube Quality Gate, the `sonar-scanner` command with exit with non-zero status, breaking your pipeline.
